@@ -22,6 +22,8 @@ namespace WebApplication1.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
             int num=Random.Shared.Next(0, 999);
+            int nums = Random.Shared.Next(0, 999);
+            int nums3 = Random.Shared.Next(0, 999);
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
