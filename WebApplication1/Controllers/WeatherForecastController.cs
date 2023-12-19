@@ -46,5 +46,19 @@ namespace WebApplication1.Controllers
             })
             .ToArray();
         }
+        [HttpGet(Name = "GetWeatherForecast3")]
+        public IEnumerable<WeatherForecast> Get3()
+        {
+            int num = Random.Shared.Next(0, 999);
+            int num2 = Random.Shared.Next(1000, 9999);
+            int num3 = Random.Shared.Next(10000, 99999);
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                TemperatureC = Random.Shared.Next(-20, 55),
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            })
+            .ToArray();
+        }
     }
 }
